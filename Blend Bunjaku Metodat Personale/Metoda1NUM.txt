@@ -12,3 +12,6 @@ def NUMfunksioni():
     print("Negative number")
 
     serverSocket.sendto(num.encode("ASCII"), adresaKlientit)
+    
+    
+    #tested!
