@@ -1,0 +1,20 @@
+Metoda per printimin e nje numri random:
+
+import random
+
+#Printo nje numer random
+print(random.randint(0,20))
+
+
+Metoda e shkembimit te vlerave :
+
+x = 9
+y = 8
+
+#Krijo nje variabel te perkohshme dhe shkembe vlerat 
+temp = x
+x = y
+y = temp
+
+print('Vlera e x pas shkembimit: {}'.format(x))
+print('Vlera e y pas shkembimit: {}'.format(y))
