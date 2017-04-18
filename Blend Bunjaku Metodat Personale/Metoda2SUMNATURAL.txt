@@ -21,3 +21,5 @@ def ShumeNaturalfunksioni():
     print("The sum is",sum)
 
     serverSocket.sendto(sum.encode("ASCII"), adresaKlientit)
+    
+    #TESTED, metoda per mbledhjen e numrave natyral
