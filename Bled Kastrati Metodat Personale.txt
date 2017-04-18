@@ -1,9 +1,12 @@
 Metoda e pare :
+def Nrfunksioni():
 num = int(input("Enter a number: "))
 if (num % 2) == 0:
    print("{0} is Even".format(num))
 else:
    print("{0} is Odd".format(num)
+   
+   serverSocket.sendto(num.encode("ASCII"), adresaKlientit)
 
 
 Metoda e dyte:
@@ -24,3 +27,6 @@ else:
    largest = num3
 
 print("The largest number between",num1,",",num2,"and",num3,"is",largest)
+
+
+serverSocket.sendto(largest.encode("ASCII"), adresaKlientit)
