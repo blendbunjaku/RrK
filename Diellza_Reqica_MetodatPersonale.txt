@@ -1,0 +1,37 @@
+Funksioni qe kthen mbrapsht fjaline e dhene
+    def reverse():
+    fjalia="Ky eshte teksti"
+    fjalia_reversed = fjalia[-1::-1]
+    serverSocket.sendto(fjalia_reversed.encode("ASCII"), adresaKlientit)
+    print(fjalia_reversed)
+
+
+Funksioni qe kthen numrin e diteve qe ka nje muaj
+def NrDiteveNeMuaj(muaji):
+    print("Shkruani muajin: " + muaji.decode("ASCII"))
+    if muaji == "Janar":
+        print ("31 dite")
+    elif muaji == "Shkurt" 
+        print ("28 dite")
+    elif muaji == "Mars":
+        print ("31 dite")
+    elif muaji == "Prill":
+        print ("30 dite")
+    elif muaji == "Maj":
+        print ("31 dite")
+    elif muaji == "Qershor":
+        print ("30 dite")
+    elif muaji == "Korrik":
+        print ("31 dite")
+    elif muaji == "Gusht":
+        print ("31 dite")
+    elif muaji == "Shtator":
+        print ("30 dite")
+    elif muaji == "Tetor":
+        print ("31 dite")
+    elif muaji == "Nentor":
+        print ("30 dite")
+    elif month == "Dhjetor":
+        print ("31 days")
+    else:
+        print ("ERROR-Shkruani nje nga 12 muajt")
