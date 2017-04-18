@@ -79,6 +79,16 @@ def Konvertofunksioni():
              print("%.2f" % round(pound,2) , "Pounds")
            else:
              print("%.2f" % round(pound,2) , "Pound")
+                
+    def NUMfunksioni():
+    num = float(input("Enter a number: "))
+    if num > 0:
+    print("Positive number")
+    elif num == 0:
+    print("Zero")
+    else:
+    print("Negative number")
+    serverSocket.sendto(num.encode("ASCII"), adresaKlientit)           
 
      while True:
         Opcioni, adresaKlientit =  serverSocket.recvfrom(2048)
@@ -142,6 +152,8 @@ while True:
             Faktorielfunksioni(5)
         elif Kerkesa.decode("ASCII") == "KONVERTO":
             Konvertofunksioni()
+        elif Kerkesa.decode("ASCII") == "NUM":
+            NUMfunksioni()
         else:
             mesazhi = "Kryeni njerin per operacioneve te lartepermendura..."
             serverSocket.sendto(mesazhi.encode("ASCII"), adresaKlientit)
