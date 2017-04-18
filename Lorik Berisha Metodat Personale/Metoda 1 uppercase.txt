@@ -1,0 +1,71 @@
+UDP CLIENT UPPER
+-----------------
+
+from socket import *
+
+server = "192.168.43.119"
+port = 12000
+
+mesazh = input("fjali me shkronja te vogla: ")
+
+clientSocket = socket(family = AF_INET, type=SOCK_DGRAM)
+
+clientSocket.sendto(mesazh. encode("ASCII"), (server, port))
+mesazhiKthyer, adresenEServerit = clientSocket.recvfrom(2048)
+print(mesazhiKthyer.decode("ASCII"))
+
+clientSocket.close()
+
+
+UDP SERVER upper
+-----------------
+from socket import*
+Port = 12000
+
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+
+serverSocket.bind(('',12000))
+
+print("Serveri i gatshem...")
+
+while True:
+        mesazhiPranuar, adresaKlientit =  serverSocket.recvfrom(2048)
+        print(mesazhiPranuar.decode("ASCII"))
+        mesazhiModifikuar = mesazhiPranuar.upper()
+        serverSocket.sendto(mesazhiModifikuar, adresaKlientit)
+
+
+TCP SERVER UPPER
+
+from socket import*
+serverPort=12000
+serverSocket = socket(AF_INET, SOCK_STREAM)
+serverSocket.bind(('',12000))
+serverSocket.listen(1)
+
+Print("Serveri TCP i gatshem...")
+
+while True:
+	connectionSocket, adresaKlientit = serverSocket.accept()
+	mesazhiPranuar = connectionSocket.recv(2048)
+        print("Mesazhi i pranuar: " + mesazhiPranuar.decode("ASCII"))
+        mesazhiModifikuar = mesazhiPranuar.upper()
+        connectionSocket.send(mesazhiModifikuar)
+        connectionSocket.close()
+
+TCP CLIENT UPPER
+
+from socket import *
+
+server = "localhost"
+port = 12001
+
+clientSocket = socket(AF_INET, SOCK_STREAM)
+clientSocket.connect((server,port))
+
+mesazhiPerDergim = input("Mesazhi: ")
+
+clientSocket.send(mesazhiPerDergim.encode("ASCII"))
+mesazhiKthyer = clientSocket.recv(2048)
+print("Mesazhi i kthyer: " + mesazhiKthyer.decode("ASCII"))
+clientSocket.close()
